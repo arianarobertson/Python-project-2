@@ -1,0 +1,47 @@
+[User] (Django default)
+
+[Recipe]
+  - id (PK)
+  - name
+  - description
+  - prep_time
+  - cook_time
+  - instructions
+  - created_at
+
+[Ingredient]
+  - id (PK)
+  - name
+  - is_allergen (optional)
+
+[RecipeIngredient]
+  - id (PK)
+  - recipe_id (FK → Recipe)
+  - ingredient_id (FK → Ingredient)
+  - quantity
+
+[Category]
+  - id (PK)
+  - name
+
+[RecipeCategory]
+  - id (PK)
+  - recipe_id (FK → Recipe)
+  - category_id (FK → Category)
+
+[Rating] *(Optional)*
+  - id (PK)
+  - recipe_id (FK → Recipe)
+  - user_id (FK → User)
+  - score
+  - comment
+  - created_at
+
+[Tag] *(Optional)*
+  - id (PK)
+  - name
+
+[RecipeTag] *(Optional)*
+  - id (PK)
+  - recipe_id (FK → Recipe)
+  - tag_id (FK → Tag)
