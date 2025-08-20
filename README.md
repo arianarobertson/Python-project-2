@@ -120,4 +120,9 @@ Log in using the superuser credentials created earlier.
 
 ---
 
+Recipe App
+
+Welcome to the Recipe App, a Django-based web application designed to help users create, manage, and search for recipes with ease. Users can add detailed recipes including ingredients, cooking times, and step-by-step instructions. The app supports categorizing recipes, tagging them with custom labels, and rating them to find the best dishes quickly.
+
+This project demonstrates key Django concepts such as model relationships, user authentication, and admin interface customization. Whether you're a beginner or an experienced developer, this app serves as a solid foundation for building more advanced culinary applications.
 
