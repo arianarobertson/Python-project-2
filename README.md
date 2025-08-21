@@ -126,3 +126,81 @@ Welcome to the Recipe App, a Django-based web application designed to help users
 
 This project demonstrates key Django concepts such as model relationships, user authentication, and admin interface customization. Whether you're a beginner or an experienced developer, this app serves as a solid foundation for building more advanced culinary applications.
 
+# Exercise 2.4: Django Views and Templates
+
+## Overview
+
+This exercise focuses on building a foundational part of a Django web application — creating views, templates, and URL routing to serve a custom welcome page. You will learn how to define function-based views, design HTML templates, and map URLs to views within your Django project structure.
+
+---
+
+## Objectives
+
+- Understand the role of Django views and templates in the MVT architecture.
+- Create a function-based view to handle HTTP requests.
+- Develop a custom HTML template for the homepage.
+- Configure URL routing to link the homepage URL to the corresponding view.
+- Run the Django development server and verify the custom welcome page.
+
+---
+
+## Project Structure
+
+<app>/
+├── templates/
+│ └── <app>/
+│ └── recipes_home.html
+├── views.py
+├── urls.py
+...
+bookstore/
+└── urls.py
+
+yaml
+Copy code
+
+---
+
+## Steps Completed
+
+1. **Created a function-based view** (`home`) in `<app>/views.py` that renders the welcome page template.
+2. **Designed the `recipes_home.html` template** with a clean, styled homepage including images and responsive layout.
+3. **Defined URL patterns** in `<app>/urls.py` to map the root URL (`""`) to the `home` view.
+4. **Included the app URLs** in the main project `bookstore/urls.py` using Django’s `include()` function.
+5. **Ran the development server** and verified the custom welcome page loads successfully at `http://127.0.0.1:8000/`.
+6. **Captured a screenshot** of the homepage (`welcome.jpg`) and organized it in the GitHub repository under `Exercise 2.4/screenshots/`.
+
+---
+
+## How to Run
+
+1. Activate the virtual environment:
+
+   ```bash
+   source a2-ve-recipeapp/bin/activate  # Unix/MacOS
+   # or
+   .\a2-ve-recipeapp\Scripts\activate   # Windows
+Navigate to the project src directory:
+
+bash
+Copy code
+cd A2_Recipe_App/src
+Run the Django development server:
+
+bash
+Copy code
+python manage.py runserver
+Open your browser and go to:
+
+cpp
+Copy code
+http://127.0.0.1:8000/
+Screenshots
+Exercise 2.4/screenshots/welcome.jpg — Custom homepage view.
+
+Reflection
+For more details on the learning process and reflections, please refer to the learningjournal.md file.
+
+License
+This project is for educational purposes.
+

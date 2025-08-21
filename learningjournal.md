@@ -68,7 +68,7 @@ First, I would create a new folder for my project and set up a **virtual environ
 
 The Django admin site is a built-in web interface that provides a powerful and user-friendly way to manage a Django application's data. It allows developers and site administrators to add, update, and delete database records through a graphical interface without writing additional code. During development, I would use the admin site to quickly create and modify data models, test database interactions, and manage users and permissions. It is highly customizable, enabling me to register models to the admin and define how they appear and behave. This speeds up development and simplifies maintenance by providing ready-to-use CRUD functionality out of the box.
 
-Exercise 2.3: Django Models
+## Exercise 2.3: Django Models
 Learning Goals
 
 Understand Django models, which form the "M" in Django’s Model-View-Template (MVT) architecture.
@@ -100,3 +100,78 @@ Integration: The Django admin interface automatically uses models to provide a m
 Writing test cases from the start is crucial because it helps ensure the application behaves as expected and prevents bugs from going unnoticed. Tests serve as a safety net for developers, especially when making changes or adding new features.
 
 For example, in a Recipe application, if I write tests early to verify that recipes are created correctly with all required fields and that search functions return accurate results, I can confidently modify or extend the app without breaking core functionality. Automated tests save time in the long run by catching errors early, reducing debugging effort, and improving code quality. They also serve as documentation to explain how different parts of the code are expected to behave.
+
+## Exercise 2.4: Django Views and Templates
+
+Learning Goals
+
+Summarize the process of creating views, templates, and URLs
+
+Explain how the “V” (View) and “T” (Template) parts of the MVT architecture work
+
+Create a frontend page for your web application
+
+Reflection Questions
+1. How do Django views work? (Explanation with example)
+
+Django views act as the bridge between the user request and the response sent back to the browser. When a user visits a URL on a Django-powered website, the framework routes the request to the appropriate view based on URL patterns.
+
+A Django view is essentially a Python function or class that:
+
+Receives an HTTP request object as input
+
+Processes any necessary data or logic (e.g., querying a database)
+
+Returns an HTTP response, often rendering an HTML template
+
+For example, a simple function-based view to display a homepage might look like this:
+
+from django.shortcuts import render
+
+def home(request):
+    return render(request, 'sales/home.html')
+
+
+Here, the home function accepts the request and uses Django's render shortcut to return an HTML page (sales/home.html) as the response.
+
+2. When to use function-based views (FBVs) vs. class-based views (CBVs) for reusable code?
+
+If I anticipate reusing a lot of code across various parts of the project, I would choose class-based views (CBVs).
+
+Why?
+
+CBVs provide an object-oriented approach to views, allowing developers to use inheritance and mixins to extend and reuse common functionality easily.
+
+Django has many built-in generic CBVs (like ListView, DetailView) that can be customized for typical web actions, reducing code duplication.
+
+CBVs help organize complex views better by separating different HTTP methods (get, post, etc.) into class methods.
+
+However, for simpler or highly customized views, function-based views (FBVs) are often easier to read and quicker to write.
+
+3. Notes on Django Template Language basics (from Django documentation)
+
+The Django Template Language (DTL) is a lightweight, easy-to-use templating system that helps separate presentation (HTML) from Python code.
+
+Key points:
+
+Variables: Use {{ variable_name }} to insert dynamic content. For example:
+
+<p>Hello, {{ user.username }}!</p>
+
+
+Tags: Control flow, logic, and structure using tags enclosed in {% %}. Common tags include:
+
+{% if condition %} ... {% else %} ... {% endif %} — conditional logic
+
+{% for item in list %} ... {% endfor %} — loops
+
+{% block %} and {% extends %} — for template inheritance and reuse
+
+Filters: Modify variables' output with filters using the pipe |. For example:
+
+<p>{{ name|lower }}</p>  <!-- converts name to lowercase -->
+
+
+Comments: Add comments inside templates using {# comment #} which won’t appear in rendered HTML.
+
+This language ensures templates remain secure by auto-escaping variables by default to prevent cross-site scripting (XSS) attacks.
