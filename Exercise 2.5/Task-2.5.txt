@@ -1,0 +1,35 @@
+Task 2.5 – Model Update Summary
+
+App: recipes
+
+Original Models (from Exercise 2.3):
+- Recipe
+- RecipeIngredient
+- RecipeCategory
+
+Changes Made:
+1. Added an `image` attribute to the `Recipe` model:
+   - Type: ImageField
+   - Purpose: To allow users to upload a visual representation of the recipe (cover image).
+   - Default: 'no_image.jpg' (to ensure fallback if user does not upload an image)
+
+2. Added `get_absolute_url()` method:
+   - Purpose: Supports linking from the recipe list to detail pages using Django’s `reverse()` function.
+
+3. Added `total_time()` and `difficulty()` methods:
+   - Purpose: `total_time()` calculates the total time required.
+   - `difficulty()` classifies the recipe as Easy / Medium / Hard based on time and number of ingredients.
+   - Logic:
+     - Easy: <30 minutes & <5 ingredients
+     - Medium: <60 minutes & <10 ingredients
+     - Hard: Otherwise
+
+Reasons for Changes:
+- The image field is needed for frontend display as per Exercise 2.5 instructions.
+- The URL and difficulty methods are needed to power navigation and detail view logic, including automated difficulty rating.
+- No deletions or migrations between models were necessary.
+
+Next Steps:
+- Run `makemigrations` and `migrate`.
+- Add image assets (e.g., `no_image.jpg`) in the appropriate media directory.
+- Update templates and views t

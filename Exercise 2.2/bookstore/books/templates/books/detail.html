@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{ object.name }}</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'sales/css/style.css' %}">
+</head>
+
+<body>
+
+    <h1>{{ object.name }}</h1>
+
+    <p><strong>Author:</strong> {{ object.author_name }}</p>
+    <p><strong>Price:</strong> ${{ object.price }}</p>
+    <p><strong>Genre:</strong> {{ object.get_genre_display }}</p>
+    <p><strong>Book Type:</strong> {{ object.get_book_type_display }}</p>
+
+    <p><img src="{{ object.pic.url }}" width="200" height="300" alt="{{ object.name }}"></p>
+
+    <a href="{% url 'books:list' %}" class="back-link">← Back to Book List</a>
+
+</body>
+
+</html>

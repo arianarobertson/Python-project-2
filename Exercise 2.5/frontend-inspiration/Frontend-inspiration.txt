@@ -1,0 +1,13 @@
+Frontend Inspirations
+
+1. AllRecipes – https://www.allrecipes.com
+
+AllRecipes has a clean and structured layout that makes it easy to browse, search, and filter recipes. I like how it prominently features recipe ratings and user reviews, which builds trust. The use of large, high-quality food images also makes the site visually appealing and inviting.
+
+2. Tasty (by BuzzFeed) – https://tasty.co
+
+Tasty stands out for its modern, minimalist interface and its strong emphasis on video content. I really enjoy the quick, visual step-by-step recipe videos that play automatically—great for learning visually. The bold fonts and colorful buttons also give it a fun, mobile-friendly feel.
+
+3. Delish – https://www.delish.com
+
+Delish uses bright, bold visuals and eye-catching headlines to immediately draw attention. I like how the homepage is filled with trending or seasonal recipes, which keeps things fresh and timely. The layout feels more like a lifestyle magazine, making it fun to explore casually.

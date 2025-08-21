@@ -175,3 +175,43 @@ Filters: Modify variables' output with filters using the pipe |. For example:
 Comments: Add comments inside templates using {# comment #} which won’t appear in rendered HTML.
 
 This language ensures templates remain secure by auto-escaping variables by default to prevent cross-site scripting (XSS) attacks.
+
+## 🧠 Exercise 2.5: Django MVT Revisited
+📚 Learning Goals
+
+Add images to the model and display them on the frontend of your application
+
+Create complex views with access to the model
+
+Display records with views and templates
+
+📝 Reflection Questions
+🔹 In your own words, explain Django static files and how Django handles them.
+
+Static files in Django include CSS, JavaScript, and images that are not generated dynamically but are used to style and enhance the frontend. Django handles them by:
+
+Storing them in specific directories such as static/ inside each app or a central directory defined in STATICFILES_DIRS.
+
+During development, Django serves them using the development server.
+
+In production, they must be collected into a single folder using python manage.py collectstatic and served using a proper web server (like Nginx).
+
+Static files are accessed in templates using the {% load static %} tag and then referenced via {% static 'path/to/file.css' %}.
+
+🔹 Look up the following two Django packages:
+
+django-cleanup
+This package automatically deletes old media files from the file system when a FileField or ImageField is updated or deleted. Without this package, media files remain on disk even if they are no longer referenced in the database, leading to clutter. django-cleanup helps keep media storage clean and consistent.
+
+django-versatileimagefield
+A drop-in replacement for Django's ImageField, this package allows for advanced image handling. It supports creating thumbnails, cropping, resizing, and generating different image sizes on demand. It’s especially useful when you want to display images in multiple formats across your site while keeping file storage efficient.
+
+💬 Personal Reflection
+
+So far, I’ve really enjoyed building out the Recipe App and seeing how the MVT architecture works in practice. I’m getting more comfortable working with models, views, and templates together, and I’m proud of being able to connect all the pieces and display dynamic content on the frontend.
+
+One thing I’m especially proud of is getting image uploads to work properly and then displaying them through templates. It made the site feel much more complete and realistic.
+
+Something I’ve struggled with is remembering when to use dot notation vs template tags, especially inside HTML files. I also occasionally mix up static vs media paths, which I want to get more practice with.
+
+I would like more practice with custom model methods, class-based views, and writing unit tests—especially when dealing with related models. I’ll bring this up in my next mentor call to ask for more examples or exercises in those areas.

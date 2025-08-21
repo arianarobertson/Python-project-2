@@ -1,14 +1,27 @@
-<!-- sales/templates/sales/home.html -->
 <!DOCTYPE html>
 <html>
 
 <head>
     <title>Bookstore Home</title>
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'sales/css/style.css' %}">
 </head>
 
 <body>
-    <h1>Welcome to the Bookstore!</h1>
-    <p>This is the home page of the sales app.</p>
+
+    <h1>Welcome to Our Bookstore</h1>
+
+    <p>Explore a world of literature and knowledge</p>
+
+    <p style="text-align:center">
+        <img src="{% static 'sales/images/bookstore.jpg' %}" alt="Bookstore" width="600" height="300">
+    </p>
+
+    <p class="back-link">
+        <a href="{% url 'books:list' %}">View Our Books →</a>
+    </p>
+
 </body>
 
 </html>
