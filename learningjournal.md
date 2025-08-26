@@ -215,3 +215,70 @@ One thing I’m especially proud of is getting image uploads to work properly an
 Something I’ve struggled with is remembering when to use dot notation vs template tags, especially inside HTML files. I also occasionally mix up static vs media paths, which I want to get more practice with.
 
 I would like more practice with custom model methods, class-based views, and writing unit tests—especially when dealing with related models. I’ll bring this up in my next mentor call to ask for more examples or exercises in those areas.
+
+# 📓 Learning Journal – Exercise 2.6: User Authentication in Django
+
+## 🎯 Learning Goals
+- Create authentication for a Django web application  
+- Use **GET** and **POST** methods in forms  
+- Password-protect application views so only authorized users can access them  
+
+---
+
+## ✨ Reflection Questions
+
+### 1. Importance of Incorporating Authentication
+Authentication is crucial because it ensures that only authorized users can access specific parts of a web application. For example, in a **Recipe App**, anyone might be able to browse public recipes, but only registered users should be able to **add new recipes, edit their own content, or leave ratings**. Without authentication, sensitive actions could be performed by anyone, which could lead to data loss, spam, or misuse of the system. Authentication therefore protects both the **user’s data** and the **integrity of the application**.
+
+---
+
+### 2. Steps to Create a Login in Django
+To create a login system in a Django web application, the general steps are:
+
+1. **Enable Django’s Authentication System**  
+   - Add `'django.contrib.auth'` and `'django.contrib.contenttypes'` to `INSTALLED_APPS` (usually already included in a new project).  
+
+2. **Create a Login View**  
+   - Use Django’s built-in `LoginView` or create a custom view that handles a login form with `username` and `password`.  
+
+3. **Set Up URLs**  
+   - Add routes for `/login/` and `/logout/` in `urls.py`.  
+   - Optionally add a `logout_success` page for user feedback.  
+
+4. **Create Templates**  
+   - Create `login.html` for the login form.  
+   - Use POST method to securely send the login data.  
+   - Provide links/buttons for navigation (e.g., back to home, sign up).  
+
+5. **Protect Views**  
+   - Apply `@login_required` decorator to views that should only be accessed by authenticated users (e.g., creating or editing recipes).  
+
+6. **Redirects**  
+   - Configure `LOGIN_REDIRECT_URL` and `LOGOUT_REDIRECT_URL` in `settings.py` so users are redirected to appropriate pages after login/logout.  
+
+---
+
+### 3. Django Functions
+
+#### 🔑 `django.contrib.auth.login(request, user)`
+- Authenticates and logs a user into the session.  
+- This function updates the session with the user’s ID, meaning Django can identify the logged-in user for subsequent requests.  
+- Typically used after verifying credentials.  
+
+---
+
+#### 🚪 `django.contrib.auth.logout(request)`
+- Logs out the user by clearing the session data.  
+- After logout, the user object in the request becomes an instance of `AnonymousUser`.  
+- Often used with `LogoutView` or a custom redirect to a "successfully logged out" page.  
+
+---
+
+#### 👤 `django.contrib.auth.decorators.login_required(view_func)`
+- A decorator used to **restrict access** to certain views.  
+- If the user is not logged in, they are redirected to the login page.  
+- Example:  
+  ```python
+  @login_required
+  def create_recipe(request):
+      ...

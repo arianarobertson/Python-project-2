@@ -204,3 +204,226 @@ For more details on the learning process and reflections, please refer to the le
 License
 This project is for educational purposes.
 
+# 🧑‍🍳 Exercise 2.5 – Recipe App Development
+
+This project is a continuation of the Recipe App, focusing on connecting the **backend models** with the **frontend views**. The exercise covers refining data models, managing data via the Django admin, creating frontend pages (welcome, recipe list, detail views), and writing tests to ensure reliability.
+
+---
+
+## ✅ Task Overview
+
+This task includes the following key steps:
+
+1. **Model Review and Updates**  
+   Revisited models from Exercise 2.3 to ensure all necessary fields and relationships were in place. Any changes were documented in the `Task-2.5` file.
+
+2. **Adding Data**  
+   - Added records for at least **five recipes** using the Django admin panel.  
+   - Each recipe includes categories, ingredients (with allergen flag), tags, ratings, and images.
+
+3. **Frontend Development**  
+   - Built a custom **welcome page** inspired by real-world recipe websites.  
+   - Created a **recipe list page** displaying all recipe titles, each linking to a detail view.  
+   - Designed a **recipe detail page** showing full information and dynamically calculating the **difficulty level**.
+
+4. **Testing**  
+   - Added and ran tests for all relevant models and views.  
+   - Ensured that relationships (e.g., M2M with tags, ingredients) and view rendering are working correctly.
+
+5. **Documentation and Uploads**  
+   - Created a document `Task-2.5` outlining model changes and frontend inspirations.  
+   - Captured and uploaded screenshots:
+     - `welcome.jpg` – Homepage
+     - `recipes-overview.jpg` – Recipe listing
+     - `recipe1.jpg`, `recipe2.jpg` – Two recipe detail views  
+   - All files uploaded to GitHub as part of the **Exercise 2.5** folder.
+
+---
+
+## 🗃️ Models Overview
+
+### Recipe  
+- `title`, `description`, `instructions`, `image`, `created_at`, `updated_at`  
+- M2M: `categories`, `tags`, `ingredients` (via `RecipeIngredient`)  
+- Method: `calculate_difficulty()` (based on number of ingredients and instruction length)
+
+### Ingredient  
+- `name`, `is_allergen`
+
+### RecipeIngredient  
+- Connects `Recipe` ↔ `Ingredient`  
+- Fields: `ingredient`, `recipe`, `quantity`
+
+### Category  
+- `name`, `description`
+
+### Tag  
+- `name`
+
+### Rating  
+- `user`, `recipe`, `score`, `comment`
+
+---
+
+## 🧪 Running Tests
+
+```bash
+# Activate the virtual environment
+source ../a2-ve-recipeapp/bin/activate
+
+# Navigate to the src folder
+cd A2_Recipe_App/src
+
+# Run tests
+python manage.py test
+Tests cover:
+
+String representations
+
+Relationships (M2M and FK)
+
+View responses and template rendering
+
+📷 Screenshots (uploaded to GitHub)
+📄 Task-2.5 – Document with model updates and frontend inspirations
+
+🖼️ Screenshots (in /Exercise 2.5/Screenshots/):
+
+welcome.jpg
+
+recipes-overview.jpg
+
+recipe1.jpg
+
+recipe2.jpg
+
+💡 Frontend Inspirations
+Documented in Task-2.5, with links and commentary on real-world recipe websites that influenced the design.
+
+🚀 Getting Started
+To run this project locally:
+
+Clone the repo
+
+bash
+Copy code
+git clone <your-repo-url>
+cd A2_Recipe_App/src
+Activate virtual environment
+
+bash
+Copy code
+source ../a2-ve-recipeapp/bin/activate
+Apply migrations and start the server
+
+bash
+Copy code
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+Visit in browser:
+
+Home: http://127.0.0.1:8000/recipes/
+
+Admin: http://127.0.0.1:8000/admin/
+
+📂 GitHub Structure
+Achievement 2/Exercise 2.5/Task-2.5 – Model updates and design references
+
+Achievement 2/Exercise 2.5/Screenshots/ – All screenshots
+
+src/ – Django project code (recipe_project, recipes, ingredients, etc.)
+
+🔗 Submission Links
+🔹 Exercise 2.5 Folder on GitHub
+
+🔹 Recipe App GitHub Repository
+
+📝 License
+This project is for educational purposes only – part of Achievement 2 coursework.
+
+# 🍲 Recipe Haven – Task 2.6
+
+## 📌 Overview
+This project is part of **Task 2.6** for the Recipe App.  
+The goal of this task was to extend the app with **user authentication features** (login, logout, logout success) and style them consistently with the rest of the app.  
+
+Users can now:
+- 🔑 Log in to their account
+- 🚪 Log out and be redirected to a **successfully logged out page**
+- 🏠 Navigate easily with styled buttons/links (Home, Login, Logout)
+- 👀 Browse all recipes with recipe name, image, and details preview
+
+---
+
+## ⚙️ Features Implemented
+- **Login Page**  
+  - Styled to match the welcome page and recipes pages  
+  - Centered form with matching button styles  
+  - Includes “Back to Home” button  
+
+- **Logout Functionality**  
+  - Custom logout handling with a **logout success page**  
+  - Styled message confirming successful logout  
+  - Buttons to **Login again** or return to **Home**  
+
+- **All Recipes Page (list.html)**  
+  - Now displays recipe **name, image, and description preview**  
+  - Logout button included in the navigation bar  
+
+---
+
+## 🛠️ Project Structure (Relevant Files)
+src/
+└── recipes/
+└── templates/
+├── recipes/
+│ ├── welcome.html
+│ ├── list.html
+│ └── logout_success.html # ✅ new template
+└── registration/
+└── login.html # ✅ styled login page
+
+yaml
+Copy
+Edit
+
+---
+
+## 🚀 How to Run the Project
+
+1. **Activate the virtual environment** (if not already active):
+   ```bash
+   source a2-ve-recipeapp/bin/activate
+Run the Django development server:
+
+bash
+Copy
+Edit
+python manage.py runserver
+Open in browser:
+
+cpp
+Copy
+Edit
+http://127.0.0.1:8000/
+🔑 Authentication Flow
+Navigate to Login (🔑 button in nav bar or /login/)
+
+Enter valid credentials
+
+Once logged in, you can browse recipes and see the Logout (🚪) button
+
+On logout, you’ll be redirected to /logout_success/ with styled confirmation and quick links
+
+✅ Task 2.6 Requirements Completed
+Added and styled login page
+
+Added logout functionality with redirect
+
+Created logout success page with matching styling
+
+Updated navigation (login/logout/home links)
+
+Styled buttons consistently across pages
+

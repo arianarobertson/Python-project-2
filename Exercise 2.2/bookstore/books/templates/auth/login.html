@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<h1>Login</h1>
+
+{% if error_message %}
+<p style="color:red">{{ error_message }}</p>
+{% endif %}
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Login</button>
+</form>
+
+<!-- Optional: button that reloads login form -->
+<a href="{% url 'login' %}">
+    <button>Back to Login</button>
+</a>
