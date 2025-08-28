@@ -1,0 +1,20 @@
+1️⃣ Planning & Search Criteria
+
+Objective:
+Allow users to search recipes and visualize the data. Users should be able to:
+
+1. Search for Recipes
+
+Goal: Allow users to search for recipes based on multiple criteria and view results in a table and chart.
+
+Search Criteria:
+
+Recipe name (partial match supported)
+
+Category
+
+Ingredients (partial match supported)
+
+Tags (partial match supported)
+
+Optional: Difficulty or Rating (bonus)

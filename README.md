@@ -427,3 +427,120 @@ Updated navigation (login/logout/home links)
 
 Styled buttons consistently across pages
 
+# Recipe Application – Search & Data Visualization Features (Exercise 2.7)
+
+This project enhances the existing Recipe Application by introducing **search functionality**, **data visualization**, and **form/view testing**. It is part of the Achievement 2 milestone and builds on previously implemented features.
+
+## 📁 Project Structure
+
+Achievement 2/
+│
+├── Exercise 2.7/
+│ ├── Task-2.7.docx
+│ ├── screenshots/
+│ │ └── test-outcome.jpg
+│ └── user-journey.mp4 (optional)
+│
+└── src/
+├── manage.py
+├── recipe/
+│ ├── models.py
+│ ├── views.py
+│ ├── forms.py
+│ ├── tests.py
+│ ├── urls.py
+│ └── templates/
+
+---
+
+## 🚀 Features Implemented
+
+### 🔍 Recipe Search
+
+- A user form allows users to search for recipes based on criteria such as name, category, or ingredients.
+- Search supports **wildcard and partial queries** (e.g., "Choco" returns "Chocolate Cake").
+- Search results are displayed in a **clickable table** linking to individual recipe details.
+- Optional "Show All" feature to view all recipes without filters.
+- Search results are converted to **pandas DataFrames** and displayed using a clean table format.
+
+### 📊 Data Visualization
+
+- Integrated visualizations using `matplotlib`:
+  - **Bar Chart**: Number of recipes by category.
+  - **Pie Chart**: Distribution of recipe types (e.g., Veg/Non-Veg).
+  - **Line Chart**: Recipe additions over time.
+- Visualizations are displayed on a dashboard page.
+- Visuals are based on internal data and are shown to users upon accessing the dashboard.
+
+### 🧪 Testing
+
+- Implemented unit tests for:
+  - Search form validation (field value, format, length).
+  - View accessibility and login protection.
+  - Pagination checks and expected outputs.
+- All tests executed with verbosity level 2.
+- Test results are saved as `test-outcome.jpg`.
+
+### 🧭 Execution Flow
+
+- A user journey is described and visualized in `Task-2.7` under the “Execution Flow” section.
+- Example journey:
+  - Home → Login → Search → View Recipe → View Dashboard → Logout
+- Screenshots or a screencast (`user-journey.mp4`) capture the full flow with URLs.
+
+---
+
+## 🛠️ How to Run the Project
+
+1. **Navigate to project directory**:
+   ```bash
+   cd A2_Recipe_App/src
+Activate virtual environment:
+
+bash
+Copy code
+source ../a2-ve-recipeapp/bin/activate  # (Linux/macOS)
+.\..\a2-ve-recipeapp\Scripts\activate   # (Windows)
+Install dependencies:
+
+bash
+Copy code
+pip install -r requirements.txt
+Run development server:
+
+bash
+Copy code
+python manage.py runserver
+Access app:
+Open browser and go to: http://127.0.0.1:8000/
+
+📂 GitHub Links
+🔗 Exercise Folder (Task Document, Test Output, Screenshots): GitHub - Exercise 2.7
+
+🔗 Recipe Application Source Code: GitHub - Recipe App
+
+If available: 🎥 User Journey Screencast: Download Video
+
+✅ Dependencies
+Ensure the following are installed:
+
+Django
+
+pandas
+
+matplotlib
+
+Use pip install to install them if not already done.
+
+📌 Notes
+The Task-2.7 document includes:
+
+Search strategy
+
+Data visualization planning
+
+Execution flow chart
+
+All screenshots and test logs are included in the screenshots/ folder.
+
+

@@ -1,12 +1,68 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<h1>Search for sales records</h1>
-<p style="text-align:center">
-    <a href="{% url 'logout' %}">Logout</a>
-</p>
-<hr>
+<head>
+    <meta charset="UTF-8">
+    <title>Sales Records</title>
+</head>
 
-<!-- Logout button -->
-<a href="{% url 'logout' %}">
-    <button>Logout</button>
-</a>
+<body>
+
+    <h1>Search for Sales Records</h1>
+
+    <p style="text-align:center">
+        <a href="{% url 'logout' %}">Logout</a>
+    </p>
+    <hr>
+
+    <!-- Search Form -->
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- Results -->
+    {% if sales_qs %}
+    <h2>Results</h2>
+    <table border="1">
+        <tr>
+            <th>Book</th>
+            <th>Customer</th>
+            <th>Salesperson</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Date</th>
+        </tr>
+        {% for sale in sales_qs %}
+        <tr>
+            <td>{{ sale.book.name }}</td>
+            <td>{{ sale.customer.name }}</td>
+            <td>{{ sale.salesperson.name }}</td>
+            <td>{{ sale.quantity }}</td>
+            <td>{{ sale.price }}</td>
+            <td>{{ sale.date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <!-- Chart -->
+    {% if chart %}
+    <br><br>
+    <h3>Chart</h3>
+    <img src="data:image/png;base64,{{ chart|safe }}">
+    {% endif %}
+
+    {% elif sales_qs is not None %}
+    <p>No results found.</p>
+    {% endif %}
+
+    <!-- Logout button -->
+    <br><br>
+    <a href="{% url 'logout' %}">
+        <button>Logout</button>
+    </a>
+
+</body>
+
+</html>
