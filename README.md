@@ -427,7 +427,7 @@ Updated navigation (login/logout/home links)
 
 Styled buttons consistently across pages
 
-# Recipe Application – Search & Data Visualization Features (Exercise 2.7)
+# Exercise 2.7 Recipe Application – Search & Data Visualization Features
 
 This project enhances the existing Recipe Application by introducing **search functionality**, **data visualization**, and **form/view testing**. It is part of the Achievement 2 milestone and builds on previously implemented features.
 
@@ -542,5 +542,156 @@ Data visualization planning
 Execution flow chart
 
 All screenshots and test logs are included in the screenshots/ folder.
+
+Exercise 2.8 – Recipe Application
+Overview
+
+This exercise finalizes the Recipe Application, ensuring that all features are functional, user-friendly, and production-ready. The application allows users to:
+
+Browse a collection of recipes.
+
+Search and filter recipes by name, category, ingredient, or tag.
+
+Add new recipes (for logged-in users).
+
+“Love” or favorite recipes.
+
+View data visualizations for recipe statistics.
+
+Access an About Me page with portfolio and contact information.
+
+This exercise also includes automated testing to ensure the application is stable and follows best practices.
+
+✅ Features Implemented
+
+Homepage with navigation links to all subpages.
+
+Recipe List & Detail Pages for browsing and viewing recipes.
+
+Recipe Search & Filter functionality.
+
+User Authentication:
+
+Login form
+
+Logout
+
+Protected features for logged-in users
+
+Add Recipe Page for logged-in users.
+
+Love Recipes feature for users to favorite recipes.
+
+About Me Page with portfolio, GitHub, and contact links.
+
+Data Visualizations for recipes (charts).
+
+Preloaded Recipe Data (15+ recipes for demonstration).
+
+Automated Tests covering models, views, and forms.
+
+📂 Project Structure
+a2-ve-recipeapp/
+│
+├─ recipes/           # Main app
+│  ├─ migrations/
+│  ├─ templates/      # HTML templates
+│  ├─ static/         # CSS, JS, images
+│  ├─ models.py
+│  ├─ views.py
+│  ├─ forms.py
+│  └─ urls.py
+│
+├─ categories/
+├─ ingredients/
+├─ tags/
+├─ ratings/
+│
+├─ recipe_project/
+│  ├─ settings.py
+│  ├─ urls.py
+│  └─ wsgi.py
+│
+├─ manage.py
+├─ requirements.txt
+└─ README.md
+
+🧪 Running Tests
+
+Automated tests have been added to ensure functionality across models, views, and forms.
+
+Run tests locally:
+
+python manage.py test
+
+
+Test report: screenshots/test-report.jpg in the Exercise 2.8 folder.
+All tests have passed successfully.
+
+🌐 Deployment
+
+The application is deployed and accessible online:
+
+Heroku Link: https://immense-beach-49370.herokuapp.com/
+
+Login for mentor:
+
+Username: mentorCF
+
+Password: Ment0r@CareerF0undry
+
+📦 GitHub Repository
+
+Production-ready code: Recipe App Repository
+
+Exercise 2.8 Folder: Includes screenshots and notes:
+Exercise 2.8 GitHub Folder
+
+⚙️ Installation & Local Setup
+
+Clone the repository:
+
+git clone https://github.com/yourusername/recipe-app.git
+cd recipe-app
+
+
+Create and activate a virtual environment:
+
+python -m venv a2-ve-recipeapp
+source a2-ve-recipeapp/bin/activate  # macOS/Linux
+# OR
+a2-ve-recipeapp\Scripts\activate  # Windows
+
+
+Install dependencies:
+
+pip install -r requirements.txt
+
+
+Apply migrations:
+
+python manage.py migrate
+
+
+Create a superuser (optional for testing):
+
+python manage.py createsuperuser
+
+
+Run the development server:
+
+python manage.py runserver
+
+📝 Notes
+
+The SECRET_KEY has been removed from GitHub for security.
+
+Static files are configured for Heroku deployment.
+
+Preloaded data ensures search and chart functionality works immediately.
+
+📌 Maintainers
+
+Ariana Robertson – Developer
 
 
