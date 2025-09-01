@@ -122,9 +122,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS=[
-   BASE_DIR / 'static'
-]
+# STATICFILES_DIRS=[
+#    BASE_DIR / 'static'
+# ]
 # The absolute path to the directory where collectstatic will collect static files for deployment.
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
@@ -135,7 +135,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # AUTH
 LOGIN_URL = '/login/'
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'recipes:home'
 LOGOUT_REDIRECT_URL = '/'   # After logout, go back to homepage
 
 # Media files (user uploaded content)
